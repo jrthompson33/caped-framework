@@ -1,0 +1,88 @@
+---
+/** Client-side scroll spy for Starlight sidebar anchor links on the single-page supplement. */
+---
+
+<script>
+  function initSidebarScrollSpy() {
+    const sidebar = document.getElementById('starlight__sidebar');
+    if (!sidebar) return;
+
+    const links = [...sidebar.querySelectorAll('a[href*="#"]')].filter(
+      (link) => link.hash.length > 1
+    );
+    if (links.length === 0) return;
+
+    const sections = links
+      .map((link) => {
+        const id = decodeURIComponent(link.hash.slice(1));
+        const element = document.getElementById(id);
+        return element ? { link, element, id } : null;
+      })
+      .filter((section): section is NonNullable<typeof section> => section !== null);
+
+    if (sections.length === 0) return;
+
+    let activeId: string | null = null;
+
+    function getScrollOffset() {
+      const header = document.querySelector('.header');
+      return (header?.getBoundingClientRect().height ?? 0) + 32;
+    }
+
+    function setActive(id: string) {
+      if (id === activeId) return;
+      activeId = id;
+
+      for (const { link, id: sectionId } of sections) {
+        if (sectionId === id) {
+          link.setAttribute('aria-current', 'page');
+          link.closest('details')?.setAttribute('open', '');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      }
+    }
+
+    function updateActiveSection() {
+      const offset = getScrollOffset();
+      const scrollPosition = window.scrollY + offset;
+
+      let current = sections[0].id;
+
+      for (const { element, id } of sections) {
+        const top = element.getBoundingClientRect().top + window.scrollY;
+        if (top <= scrollPosition) {
+          current = id;
+        }
+      }
+
+      setActive(current);
+    }
+
+    updateActiveSection();
+
+    let ticking = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateActiveSection();
+          ticking = false;
+        });
+      },
+      { passive: true }
+    );
+
+    window.addEventListener('hashchange', () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (sections.some((section) => section.id === id)) {
+        setActive(id);
+      }
+    });
+  }
+
+  initSidebarScrollSpy();
+  document.addEventListener('astro:page-load', initSidebarScrollSpy);
+</script>
