@@ -1,0 +1,33 @@
+---
+import type { ExampleSubsection } from '@/content/config';
+import AnnotatedText from '@/components/react/AnnotatedText';
+import ExampleEmbed from '@/components/ExampleEmbed.astro';
+
+interface Props {
+  section: ExampleSubsection;
+  exampleTitle: string;
+  index: number;
+}
+
+const { section, exampleTitle, index } = Astro.props;
+const embedTitle = section.title ?? `${exampleTitle} — part ${index + 1}`;
+---
+
+<section class="example-subsection">
+  {section.title && <h3 class="example-subsection-title">{section.title}</h3>}
+
+  <AnnotatedText
+    client:load
+    text={section.text}
+    annotations={section.annotations}
+  >
+    <p slot="fallback" class="annotated-text-fallback">{section.text}</p>
+  </AnnotatedText>
+
+  <ExampleEmbed
+    embedType={section.embedType}
+    embedSrc={section.embedSrc}
+    embedCode={section.embedCode}
+    title={embedTitle}
+  />
+</section>

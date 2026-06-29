@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import ExampleSection from '@/components/ExampleSection.astro';
+import FrameworkLegend from '@/components/FrameworkLegend.astro';
+
+const [paper] = await getCollection('site');
+const examples = (await getCollection('examples'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => a.data.order - b.data.order);
+
+if (!paper) {
+  throw new Error('Missing site content: src/content/site/paper.md');
+}
+
+const { title, subtitle, venue, year, authors, abstract } = paper.data;
+---
+
+<div class="caped-supplement">
+  <header>
+    <p class="venue">{venue} {year}</p>
+    <h1>{title}</h1>
+    <p class="subtitle">{subtitle}</p>
+    <p class="authors">{authors.join(' · ')}</p>
+  </header>
+
+  <section id="about-caped" class="about-grid">
+    <div>
+      <h2>About CAPED</h2>
+      <p>{abstract}</p>
+      <p style="color: var(--sl-color-gray-3); font-size: 0.875rem; margin-top: 1.5rem;">
+        Hover or focus highlighted phrases in each example to see how authoring skills map to
+        CAPED dimensions.
+      </p>
+    </div>
+    <FrameworkLegend />
+  </section>
+
+  <nav class="toc-card" aria-label="Example table of contents">
+    <h2 class="section-label">Examples</h2>
+    <ol>
+      {
+        examples.map((example) => (
+          <li>
+            <a href={`#${example.slug}`}>
+              {example.data.order}. {example.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+
+  <section class="examples-stack">
+    {examples.map((example) => <ExampleSection example={example} />)}
+  </section>
+</div>

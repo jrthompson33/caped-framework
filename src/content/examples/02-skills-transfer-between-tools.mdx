@@ -1,0 +1,42 @@
+---
+title: "Skills Transfer between Tools"
+order: 2
+summary: "A data engineer adapts visualization skills from Altair and D3 to Power BI, relying on programming for data transformation between chart iterations."
+intro: "Kori recently joined a public health organization as a data engineer. The organization publishes reports exclusively with Microsoft Power BI. Despite being new to Power BI, Kori's experience with Altair and D3 helps them adapt quickly."
+sections:
+  - title: "Multi-series line chart in Power BI"
+    text: "Kori decides to visualize the change in mortality rates across age groups. They create a multi-series line chart with Age Group as the series, Year on the x-axis, and Mortality Rate on the y-axis. Noticing a steady yet gradual decline in all age groups, Kori wonders if the orders of magnitude are overshadowed by the older age groups."
+    embedType: image
+    embedSrc: "/images/LineChart1.png"
+    annotations:
+      - text: "multi-series line chart"
+        dimension: output
+        note: "Output skill selects a line chart form suited to temporal comparison across groups."
+      - text: "Age Group"
+        dimension: abstraction
+        note: "Abstraction skill maps a data column to a visual channel (series/color)."
+      - text: "Power BI"
+        dimension: paradigm
+        note: "Shelf-construction paradigm—dragging fields to encodings, similar to Altair's mental model."
+  - title: "Rate-of-change chart after data transformation"
+    text: "Kori hypothesizes that a rate of change would allow better comparison. They write a Python script using Pandas to compute a new Mortality rate change (since 1970) column and export the transformed dataset. Loading it back into Power BI, Kori creates a line chart showing similar decreasing trends across age groups—but now notices a peak in the 25 to 44 age group from 1983 to 1995. After iterating between Pandas and Power BI, Kori finds the AIDS epidemic explains the peak."
+    embedType: image
+    embedSrc: "/images/LineChart2.png"
+    annotations:
+      - text: "Python script"
+        dimension: paradigm
+        note: "Programming paradigm for data transformation—familiar to Kori from D3/Altair workflows."
+      - text: "Mortality rate change"
+        dimension: input
+        note: "Input skill derives a new data column needed for the desired comparison."
+      - text: "iterating between Pandas and Power BI"
+        dimension: expression
+        note: "Expression skill spans tool boundaries—exporting, reloading, and re-encoding transformed data."
+remarks: "Despite being relatively new to Power BI, Kori quickly adapts to it based on experience with Altair. This scenario indicates that visualization authoring skills are transferable beyond the authoring medium, as Altair and Power BI share similar concepts of mapping data columns to visual channels. However, transfer of skills is not bi-directional as someone with only Power BI experience would need to learn additional programming skills to use Altair. Secondly, this scenario highlights the importance of data transformation in the visualization authoring process."
+capedFocus:
+  - input
+  - abstraction
+  - paradigm
+  - expression
+draft: false
+---

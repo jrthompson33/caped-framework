@@ -1,0 +1,42 @@
+---
+title: "Different Authoring Skills to Work with AI"
+order: 3
+summary: "An analyst uses an AI assistant to compare job offers, discovering that effective AI-supported authoring requires code verification, design critique, and targeted prompting."
+intro: "Jesse, an analyst experienced with both programming and visualization design, is evaluating four job offers. The dataset contains five columns with distinct units: Annual Salary, Commute Time, Vacation Days, Remote Work Percentage, and Retirement Match Percentage."
+sections:
+  - title: "Initial prompt produces a flawed grouped bar chart"
+    text: "Jesse uploads the dataset to an AI assistant with a simple prompt: Create a bar chart to compare these job offers across salary, commute, vacation, remote work, and retirement. Because the prompt is generic, the AI generates Python code for a standard grouped bar chart. Jesse notices only one bar (Annual Salary) appears for each offer—the other variables are missing. Jesse examines the generated code and confirms it is syntactically correct, but the chart is visually skewed because the five metrics span markedly different value ranges and have different units."
+    embedType: image
+    embedSrc: "/images/placeholders/example-4.svg"
+    annotations:
+      - text: "simple prompt"
+        dimension: paradigm
+        note: "Natural-language paradigm—articulating intent without specifying chart structure."
+      - text: "grouped bar chart"
+        dimension: output
+        note: "Output skill to recognize that a grouped bar chart is inappropriate for disparate-scale metrics."
+      - text: "examines the generated code"
+        dimension: expression
+        note: "Expression skill shifts to code reading and verification rather than writing from scratch."
+  - title: "Targeted follow-up produces a parallel coordinates plot"
+    text: "Jesse provides a specific follow-up prompt: Change this to a parallel coordinates plot. Give each variable its own vertical axis, normalize the scales, so we can see the relative highs and lows across each dimension, and color the lines based on the job offer. The AI handles the normalization and plotting logic, generating a readable parallel coordinates plot. Jesse can now clearly compare the jobs across all dimensions."
+    embedType: iframe
+    embedSrc: "https://vega.github.io/editor/#/examples/vega-lite/parallel_coordinates"
+    annotations:
+      - text: "parallel coordinates plot"
+        dimension: output
+        note: "Output skill selects an appropriate multivariate chart form for the analytical task."
+      - text: "specific follow-up prompt"
+        dimension: paradigm
+        note: "Refined prompting paradigm—steering the AI with precise structural vocabulary."
+      - text: "normalize the scales"
+        dimension: abstraction
+        note: "Abstraction skill specifies how data dimensions should be mapped to independent axes."
+remarks: "With the power of LLMs, Jesse can quickly generate complex visualizations like a parallel coordinates plot. However, Jesse's success relies on a combination of programming and visualization composition knowledge. Jesse's programming expertise was essential to inspect the script and verify the initial output was a design failure, not a bug. Once confident the code was correct but inappropriate, Jesse needed conceptual knowledge to diagnose why the grouped bar chart failed and the vocabulary to instruct the AI on the fix. With the rise of LLMs, chart authoring skills evolve to encompass code verification, targeted prompting, and structural critique."
+capedFocus:
+  - paradigm
+  - output
+  - expression
+  - abstraction
+draft: false
+---

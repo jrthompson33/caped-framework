@@ -1,0 +1,60 @@
+---
+interface Props {
+  embedType: 'live' | 'iframe' | 'image';
+  embedSrc?: string;
+  embedCode?: string;
+  title: string;
+}
+
+const { embedType, embedSrc, embedCode, title } = Astro.props;
+const liveData = [12, 28, 19, 34];
+
+function withBase(path: string) {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+}
+
+const imageSrc = embedSrc ? withBase(embedSrc) : undefined;
+---
+
+{
+  embedType === 'image' && imageSrc ? (
+    <figure class="embed embed-image">
+      <img src={imageSrc} alt={`Visualization example: ${title}`} />
+    </figure>
+  ) : embedType === 'iframe' && embedSrc ? (
+    <div class="embed embed-iframe">
+      <iframe
+        src={embedSrc}
+        title={`Embedded visualization: ${title}`}
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+      />
+    </div>
+  ) : embedType === 'live' ? (
+    <div class="embed embed-live">
+      <p class="embed-label">Live embed placeholder — replace with D3, Observable, or Sandpack</p>
+      <svg width="240" height="80" aria-label={`Sample chart for ${title}`}>
+        {
+          liveData.map((value, index) => (
+            <rect
+              x={index * 55 + 8}
+              y={80 - value}
+              width="40"
+              height={value}
+              fill="var(--sl-color-accent)"
+              rx="2"
+            />
+          ))
+        }
+      </svg>
+    </div>
+  ) : (
+    <div class="embed embed-empty">
+      No embed configured yet.
+      {embedCode && <pre class="embed-code">{embedCode.trim()}</pre>}
+    </div>
+  )
+}

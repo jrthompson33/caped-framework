@@ -1,0 +1,356 @@
+/* CAPED custom styles for Starlight */
+
+:root {
+  --sl-content-width: 56rem;
+
+  --color-border: var(--sl-color-gray-5);
+  --color-muted: var(--sl-color-gray-3);
+  --color-surface: var(--sl-color-bg-nav);
+  --color-accent: var(--sl-color-accent);
+  --color-accent-soft: var(--sl-color-accent-low);
+  --color-bg: var(--sl-color-bg);
+  --color-text: var(--sl-color-text);
+
+  /* Input Data — sky blue */
+  --caped-input-fill: #b5d4ef;
+  --caped-input: #3a6f9e;
+  --caped-input-text: #1a3f5f;
+
+  /* Output Chart — lemon yellow */
+  --caped-output-fill: #f2e4a8;
+  --caped-output: #9e8428;
+  --caped-output-text: #564810;
+
+  /* Paradigm — peach */
+  --caped-paradigm-fill: #efd0a8;
+  --caped-paradigm: #c06a32;
+  --caped-paradigm-text: #6b3818;
+
+  /* Abstraction — silver grey */
+  --caped-abstraction-fill: #d6d6d6;
+  --caped-abstraction: #5e5e5e;
+  --caped-abstraction-text: #2a2a2a;
+
+  /* Expression — mint green */
+  --caped-expression-fill: #bfe2bf;
+  --caped-expression: #3f8a3f;
+  --caped-expression-text: #1e4e1e;
+}
+
+:root[data-theme='dark'] {
+  --caped-input-fill: #1e3a52;
+  --caped-input: #7eb8e8;
+  --caped-input-text: #d4e8f8;
+
+  --caped-output-fill: #3d3518;
+  --caped-output: #e8d078;
+  --caped-output-text: #f8f0c8;
+
+  --caped-paradigm-fill: #4a3020;
+  --caped-paradigm: #f0a868;
+  --caped-paradigm-text: #fce8d0;
+
+  --caped-abstraction-fill: #2e2e2e;
+  --caped-abstraction: #b0b0b0;
+  --caped-abstraction-text: #e8e8e8;
+
+  --caped-expression-fill: #1e3a1e;
+  --caped-expression: #7ec87e;
+  --caped-expression-text: #d4f0d4;
+}
+
+.caped-supplement header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+.caped-supplement .venue {
+  color: var(--sl-color-gray-3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.caped-supplement .subtitle {
+  color: var(--sl-color-gray-3);
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+.caped-supplement .authors {
+  color: var(--sl-color-gray-3);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.caped-supplement .example-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-intro {
+  color: var(--sl-color-gray-2);
+  line-height: 1.65;
+  margin: 0 0 2rem;
+}
+
+.example-subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.example-subsection-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.example-subsection .annotated-text {
+  margin-bottom: 1.5rem;
+}
+
+.caped-supplement .about-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .caped-supplement .about-grid {
+    grid-template-columns: minmax(0, 1fr) 220px;
+  }
+}
+
+.caped-supplement .example-card,
+.caped-supplement .toc-card,
+.caped-supplement .legend-card {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  background: var(--sl-color-bg-nav);
+  padding: 1.5rem;
+}
+
+.caped-supplement .example-card {
+  scroll-margin-top: 6rem;
+}
+
+.caped-supplement .toc-card {
+  margin-bottom: 2.5rem;
+}
+
+.caped-supplement .toc-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.caped-supplement .toc-card li + li {
+  margin-top: 0.5rem;
+}
+
+.caped-supplement .section-label {
+  color: var(--sl-color-gray-3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.caped-supplement .examples-stack > * + * {
+  margin-top: 3rem;
+}
+
+/* CAPED dimension tokens — active legend rows */
+.caped-legend-active-input {
+  background: var(--caped-input-fill);
+  border-left: 3px solid var(--caped-input);
+}
+
+.caped-legend-active-output {
+  background: var(--caped-output-fill);
+  border-left: 3px solid var(--caped-output);
+}
+
+.caped-legend-active-paradigm {
+  background: var(--caped-paradigm-fill);
+  border-left: 3px solid var(--caped-paradigm);
+}
+
+.caped-legend-active-abstraction {
+  background: var(--caped-abstraction-fill);
+  border-left: 3px solid var(--caped-abstraction);
+}
+
+.caped-legend-active-expression {
+  background: var(--caped-expression-fill);
+  border-left: 3px solid var(--caped-expression);
+}
+
+/* CAPED dimension highlight colors — inline text annotations */
+.caped-input {
+  background: var(--caped-input-fill);
+  border-bottom: 2px solid var(--caped-input);
+  border-radius: 2px;
+  color: var(--caped-input-text);
+  cursor: help;
+  padding: 0 0.15em;
+}
+
+.caped-output {
+  background: var(--caped-output-fill);
+  border-bottom: 2px solid var(--caped-output);
+  border-radius: 2px;
+  color: var(--caped-output-text);
+  cursor: help;
+  padding: 0 0.15em;
+}
+
+.caped-paradigm {
+  background: var(--caped-paradigm-fill);
+  border-bottom: 2px solid var(--caped-paradigm);
+  border-radius: 2px;
+  color: var(--caped-paradigm-text);
+  cursor: help;
+  padding: 0 0.15em;
+}
+
+.caped-abstraction {
+  background: var(--caped-abstraction-fill);
+  border-bottom: 2px solid var(--caped-abstraction);
+  border-radius: 2px;
+  color: var(--caped-abstraction-text);
+  cursor: help;
+  padding: 0 0.15em;
+}
+
+.caped-expression {
+  background: var(--caped-expression-fill);
+  border-bottom: 2px solid var(--caped-expression);
+  border-radius: 2px;
+  color: var(--caped-expression-text);
+  cursor: help;
+  padding: 0 0.15em;
+}
+
+/* Annotation note callouts */
+.caped-note-input {
+  background: var(--caped-input-fill);
+  border-color: var(--caped-input);
+  color: var(--caped-input-text);
+}
+
+.caped-note-output {
+  background: var(--caped-output-fill);
+  border-color: var(--caped-output);
+  color: var(--caped-output-text);
+}
+
+.caped-note-paradigm {
+  background: var(--caped-paradigm-fill);
+  border-color: var(--caped-paradigm);
+  color: var(--caped-paradigm-text);
+}
+
+.caped-note-abstraction {
+  background: var(--caped-abstraction-fill);
+  border-color: var(--caped-abstraction);
+  color: var(--caped-abstraction-text);
+}
+
+.caped-note-expression {
+  background: var(--caped-expression-fill);
+  border-color: var(--caped-expression);
+  color: var(--caped-expression-text);
+}
+
+.caped-note {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Example embeds */
+.embed {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.embed-live {
+  align-items: center;
+  background: var(--sl-color-accent-low);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.embed-label {
+  color: var(--sl-color-gray-3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+.embed-image img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.embed-image figcaption {
+  color: var(--sl-color-gray-3);
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.embed-iframe iframe {
+  border: 0;
+  display: block;
+  height: 20rem;
+  width: 100%;
+}
+
+.embed-empty {
+  border-style: dashed;
+  color: var(--sl-color-gray-3);
+  font-size: 0.875rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.embed-code {
+  background: var(--sl-color-gray-6);
+  border-radius: 0.5rem;
+  font-family: var(--__sl-font-mono);
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+/* Annotated description text */
+.annotated-text p,
+.annotated-text-fallback {
+  line-height: 1.65;
+  margin: 0;
+}
+
+.example-remarks {
+  border-top: 1px solid var(--sl-color-gray-5);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.example-remarks p {
+  color: var(--sl-color-gray-2);
+  line-height: 1.65;
+  margin: 0;
+}

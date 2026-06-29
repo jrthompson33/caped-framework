@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FrameworkLegend from './FrameworkLegend.astro';
+import ExampleSubsection from './ExampleSubsection.astro';
+
+type Example = CollectionEntry<'examples'>;
+
+interface Props {
+  example: Example;
+}
+
+const { example } = Astro.props;
+const { title, summary, intro, sections, capedFocus, remarks } = example.data;
+---
+
+<article id={example.slug} class="example-card">
+  <header style="margin-bottom: 1.5rem;">
+    <p class="section-label">Example {example.data.order}</p>
+    <h2>{title}</h2>
+    <p style="color: var(--sl-color-gray-3); margin-top: 0.5rem;">{summary}</p>
+  </header>
+
+  <div class="example-body">
+    {intro && <p class="example-intro">{intro}</p>}
+
+    <div class="example-subsections">
+      {
+        sections.map((section, index) => (
+          <ExampleSubsection section={section} exampleTitle={title} index={index} />
+        ))
+      }
+    </div>
+
+    {
+      remarks && (
+        <section class="example-remarks" aria-label="Remarks">
+          <h3 class="section-label">Remarks</h3>
+          <p>{remarks}</p>
+        </section>
+      )
+    }
+
+    <FrameworkLegend activeDimensions={capedFocus} layout="footer" />
+  </div>
+</article>

@@ -1,0 +1,42 @@
+---
+title: "Two Different Charts with the Same Tool"
+order: 1
+summary: "An analyst creates a waterfall chart and a dumbbell chart in Excel—two tasks that demand different authoring approaches despite using the same tool."
+intro: "Alex is an analyst who has recently joined the financial division of a company. They are asked to create two charts—waterfall and dumbbell charts—for a report showing the company's quarterly financial performance data, including each quarter's target and revenue. Alex decides to use Excel, a tool they are familiar with."
+sections:
+  - title: "Waterfall chart via built-in template"
+    text: "To create a waterfall chart illustrating changes in the company's net income over the quarter, Alex prepared the data to conform to the format requirement for Excel's waterfall chart template: a column for quarters and another column for increase/decrease from the previous quarter. With the data properly formatted, Alex produced the desired chart by selecting the Waterfall chart from the Insert tab in Excel."
+    embedType: image
+    embedSrc: "/images/placeholders/example-1.svg"
+    annotations:
+      - text: "waterfall chart template"
+        dimension: output
+        note: "Output skill involves recognizing that a built-in template matches the analytical task."
+      - text: "prepared the data"
+        dimension: input
+        note: "Input skill is reshaping data to meet the template's required format."
+      - text: "Insert tab"
+        dimension: paradigm
+        note: "Instantiation paradigm—selecting a pre-built chart type from the tool's menu."
+  - title: "Dumbbell chart composed from scratch"
+    text: "For the next task, Alex needs a dumbbell chart to compare actual performance against targets. As Excel does not provide a dumbbell chart template, Alex searched online and followed a tutorial to create one from scratch. The tutorial instructed Alex to organize target and actual values side-by-side, insert a scatter plot, and add error bars to connect the points. Alex found the process complex—the scatter plot and error bars did not align perfectly, and meticulous formatting was required for a professional result."
+    embedType: image
+    embedSrc: "/images/placeholders/example-1.svg"
+    annotations:
+      - text: "dumbbell chart"
+        dimension: output
+        note: "Output skill when no template exists—choosing an appropriate workaround chart form."
+      - text: "scatter plot"
+        dimension: abstraction
+        note: "Abstraction skill maps the dumbbell concept onto scatter marks and connecting lines."
+      - text: "error bars"
+        dimension: expression
+        note: "Expression skill configures low-level mark properties to mimic the desired chart type."
+remarks: "Given that Alex can fluently use Excel templates to create the desired waterfall chart, a non-trivial visualization, one might consider Alex is skilled in chart authoring with Excel. However, Alex's struggle with dumbbell chart authoring contradicts with this assessment. In fact, such struggle does not mean they are unskillful with Excel either, since the two chart creation processes employ completely different authoring approaches: the first involves instantiation of built-in templates from the tool, while the latter requires hacking to compose ground up appropriating other plots to mimic the dumbbell chart. This scenario highlights that chart authoring skills cannot be characterized solely at the level of the tool. Even with the same tool, different tasks may require different authoring approaches and, consequently, different user skills."
+capedFocus:
+  - output
+  - paradigm
+  - expression
+  - input
+draft: false
+---

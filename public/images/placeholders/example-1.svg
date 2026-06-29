@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-label="Placeholder bar chart">
+  <rect width="800" height="420" fill="#f4f6fb"/>
+  <text x="40" y="48" font-family="system-ui,sans-serif" font-size="20" fill="#5c6370">Example 1  Spreadsheet to Bar Chart (placeholder)</text>
+  <rect x="80" y="300" width="80" height="80" fill="#4f6bed" rx="4"/>
+  <rect x="200" y="240" width="80" height="140" fill="#4f6bed" rx="4"/>
+  <rect x="320" y="180" width="80" height="200" fill="#4f6bed" rx="4"/>
+  <rect x="440" y="220" width="80" height="160" fill="#4f6bed" rx="4"/>
+  <rect x="560" y="160" width="80" height="220" fill="#4f6bed" rx="4"/>
+  <line x1="60" y1="380" x2="740" y2="380" stroke="#c5cee0" stroke-width="2"/>
+</svg>
