@@ -9,20 +9,20 @@ authors:
   - "John Thompson"
   - "Chenglong Wang"
 abstract: |
-  In this paper, we introduce a new framework for characterizing the user skills
-  required for visualization authoring. Despite growing attention to authoring systems,
-  we lack a conceptual framework that characterizes the diverse and multifaceted skills
-  involved and helps identify opportunities for system design and development. Our
-  initial investigation revealed that skill is a complex and elusive concept, and that
-  existing theories on skills from other disciplines are too high-level to capture the
-  importance of tasks and tools in visualizations. To address this gap, we formulate
-  the CAPED framework that characterizes skill as the ability to create a chart
-  involving five dimensions pertinent to tasks and tools: input data, output chart,
-  paradigm, abstraction, and expression. We demonstrate the framework's
-  descriptive power by highlighting different skills involved in similar authoring
-  situations and identifying the types of knowledge associated with visualization
-  authoring. We further present examples illustrating how the framework can be used to
-  identify new research opportunities in leveraging AI to support users with varying skills.
+  The CAPED framework characterizes skill as the ability to create a chart across five
+  core dimensions—input data, output chart, paradigm, abstraction, and
+  expression—pertinent to tasks and tools. CAPED is not
+  a taxonomy of skills, nor a process model of visualization author-
+  ing. Rather, it identifies dimensions that determine what abilities are
+  required in authoring situations. 
+  
+  Chart authoring involves several different activities, including data
+  preparation, visualization construction, and refinement, as well as a
+  broad range of tools from programming languages and libraries to
+  interactive tools. One person may have different levels of expertise for
+  each of these activities and associated tools. In this section, we describe
+  three example scenarios to showcase and highlight the diverse nature
+  of required skills in visualization authoring. 
 ---
 
 This page hosts supplemental materials for our IEEE VIS submission. Use the examples below

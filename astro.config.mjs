@@ -26,19 +26,19 @@ export default defineConfig({
       sidebar: [
         { label: 'About CAPED', link: '#about-caped' },
         {
-          label: 'Examples',
+          label: 'Scenarios',
           items: [
             {
               label: 'Two Different Charts with the Same Tool',
-              link: '#01-two-different-charts-with-the-same-tool',
+              link: '#scenario-01',
             },
             {
               label: 'Skills Transfer between Tools',
-              link: '#02-skills-transfer-between-tools',
+              link: '#scenario-02',
             },
             {
               label: 'Different Authoring Skills to Work with AI',
-              link: '#03-different-authoring-skills-to-work-with-ai',
+              link: '#scenario-03',
             },
           ],
         },

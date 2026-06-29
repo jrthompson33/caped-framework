@@ -1,4 +1,5 @@
 ---
+import { capedDimensions } from '@/config/site';
 import { getCollection } from 'astro:content';
 import ExampleSection from '@/components/ExampleSection.astro';
 import FrameworkLegend from '@/components/FrameworkLegend.astro';
@@ -14,6 +15,7 @@ if (!paper) {
 }
 
 const { title, subtitle, venue, year, authors, abstract } = paper.data;
+const allCapedDimensions = capedDimensions.map((dim) => dim.id);
 ---
 
 <div class="caped-supplement">
@@ -23,20 +25,16 @@ const { title, subtitle, venue, year, authors, abstract } = paper.data;
     <p class="authors">{authors.join(' · ')}</p>
   </header>
 
-  <section id="about-caped" class="about-grid">
-    <div>
+  <section id="about-caped" class="example-card about-section">
+    <div class="example-body">
       <h2>About CAPED</h2>
       <p>{abstract}</p>
-      <p style="color: var(--sl-color-gray-3); font-size: 0.875rem; margin-top: 1.5rem;">
-        Hover or focus highlighted phrases in each example to see how authoring skills map to
-        CAPED dimensions.
-      </p>
+      <FrameworkLegend layout="footer" activeDimensions={allCapedDimensions} />
     </div>
-    <FrameworkLegend />
   </section>
 
-  <nav class="toc-card" aria-label="Example table of contents">
-    <h2 class="section-label">Examples</h2>
+  <nav class="toc-card" aria-label="Scenario table of contents">
+    <h2 class="section-label">Scenarios</h2>
     <ol>
       {
         examples.map((example) => (

@@ -112,16 +112,12 @@
   margin-bottom: 1.5rem;
 }
 
-.caped-supplement .about-grid {
-  display: grid;
-  gap: 2rem;
+.caped-supplement .about-section {
   margin-bottom: 3rem;
 }
 
-@media (min-width: 1024px) {
-  .caped-supplement .about-grid {
-    grid-template-columns: minmax(0, 1fr) 220px;
-  }
+.caped-supplement .about-section h2 {
+  margin-top: 0;
 }
 
 .caped-supplement .example-card,
