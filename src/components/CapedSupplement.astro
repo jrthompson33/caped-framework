@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ExampleSection from '@/components/ExampleSection.astro';
 import FrameworkLegend from '@/components/FrameworkLegend.astro';
+import SidebarScrollSpy from '@/components/SidebarScrollSpy.astro';
 
 const [paper] = await getCollection('site');
 const examples = (await getCollection('examples'))
@@ -17,8 +18,7 @@ const { title, subtitle, venue, year, authors, abstract } = paper.data;
 
 <div class="caped-supplement">
   <header>
-    <p class="venue">{venue} {year}</p>
-    <h1>{title}</h1>
+    <h1 id="_top">{title}</h1>
     <p class="subtitle">{subtitle}</p>
     <p class="authors">{authors.join(' · ')}</p>
   </header>
@@ -54,3 +54,6 @@ const { title, subtitle, venue, year, authors, abstract } = paper.data;
     {examples.map((example) => <ExampleSection example={example} />)}
   </section>
 </div>
+
+<SidebarScrollSpy />
+

@@ -354,3 +354,14 @@
   line-height: 1.65;
   margin: 0;
 }
+
+/* Sidebar scroll-spy active state */
+#starlight__sidebar a[aria-current='page'] {
+  box-shadow: inset 3px 0 0 var(--sl-color-accent);
+}
+
+#starlight__sidebar ul ul a[aria-current='page'] {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-accent-high);
+  font-weight: 600;
+}

@@ -1,6 +1,6 @@
 ---
-title: "CAPED Framework for Visualization Authoring Skills"
-subtitle: "Supplemental Materials — IEEE VIS"
+title: "The CAPED Framework"
+subtitle: "Characterizing User Skills in Chart Authoring through the Lens of Tasks and Tools"
 venue: "IEEE VIS"
 year: 2026
 authors:

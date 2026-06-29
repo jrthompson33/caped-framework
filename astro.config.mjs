@@ -8,12 +8,18 @@ import { fileURLToPath } from 'node:url';
 export default defineConfig({
   // Set automatically in CI via actions/configure-pages (see .github/workflows/deploy.yml)
   site: process.env.ASTRO_SITE,
-  base: process.env.ASTRO_BASE,
+  // configure-pages emits base_path without a trailing slash (e.g. /caped-framework)
+  base: process.env.ASTRO_BASE
+    ? `${process.env.ASTRO_BASE.replace(/\/$/, '')}/`
+    : undefined,
   integrations: [
     starlight({
       title: 'CAPED',
       description:
         'Supplemental materials for the CAPED framework — characterizing visualization authoring skills.',
+      components: {
+        PageTitle: './src/components/overrides/PageTitle.astro',
+      },
       customCss: ['./src/styles/starlight.css'],
       tableOfContents: false,
       pagefind: false,
