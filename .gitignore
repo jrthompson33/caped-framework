@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # Astro
 .astro/
+
+# Local npm config (machine-specific registry)
+.npmrc

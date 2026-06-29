@@ -81,7 +81,9 @@ Your site will be published at:
 
 `https://jrthompson33.github.io/caped-framework/`
 
-### Custom domain (optional)
+### Re-run deploy
+
+If the first workflow run failed at **Setup Pages**, that usually means Pages was not set to **GitHub Actions** yet when the repo was pushed. After enabling it in **Settings → Pages**, go to **Actions → Deploy to GitHub Pages → Run workflow**.
 
 Add your domain under **Settings → Pages → Custom domain**. No code changes needed—the workflow picks up the correct `site` URL automatically.
 
