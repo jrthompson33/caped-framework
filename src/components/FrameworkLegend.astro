@@ -3,13 +3,19 @@ import { capedDimensions } from '@/config/site';
 
 interface Props {
   showDescriptions?: boolean;
+  /** Scenario footers: hidden on small screens (legend appears in About only). */
+  scenario?: boolean;
 }
 
-const { showDescriptions = false } = Astro.props;
+const { showDescriptions = false, scenario = false } = Astro.props;
 ---
 
 <aside
-  class:list={['legend-card', showDescriptions && 'legend-with-descriptions']}
+  class:list={[
+    'legend-card',
+    showDescriptions && 'legend-with-descriptions',
+    scenario && 'legend-scenario',
+  ]}
   aria-label="CAPED framework dimensions"
 >
   <h2 class="section-label">CAPED Dimensions</h2>
@@ -87,5 +93,21 @@ const { showDescriptions = false } = Astro.props;
     display: block;
     font-size: 0.6875rem;
     line-height: 1.35;
+  }
+
+  @media (max-width: 49.999rem) {
+    .legend-scenario {
+      display: none;
+    }
+
+    .legend-with-descriptions .legend-list {
+      grid-template-columns: 1fr;
+    }
+
+    .legend-with-descriptions .legend-item-inner {
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 0.625rem;
+    }
   }
 </style>
