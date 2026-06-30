@@ -226,43 +226,62 @@
   padding: 0 0.15em;
 }
 
-/* Annotation note callouts */
-.caped-note-input {
+.caped-annotated {
+  position: relative;
+}
+
+.caped-dimension-tooltip {
+  border-radius: 0.25rem;
+  border: 1px solid;
+  bottom: calc(100% + 0.35rem);
+  font-size: 0.75rem;
+  font-weight: 600;
+  left: 50%;
+  opacity: 0;
+  padding: 0.25rem 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.15s, visibility 0.15s;
+  visibility: hidden;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.caped-annotated:hover .caped-dimension-tooltip,
+.caped-annotated:focus .caped-dimension-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.caped-dimension-tooltip-input {
   background: var(--caped-input-fill);
   border-color: var(--caped-input);
   color: var(--caped-input-text);
 }
 
-.caped-note-output {
+.caped-dimension-tooltip-output {
   background: var(--caped-output-fill);
   border-color: var(--caped-output);
   color: var(--caped-output-text);
 }
 
-.caped-note-paradigm {
+.caped-dimension-tooltip-paradigm {
   background: var(--caped-paradigm-fill);
   border-color: var(--caped-paradigm);
   color: var(--caped-paradigm-text);
 }
 
-.caped-note-abstraction {
+.caped-dimension-tooltip-abstraction {
   background: var(--caped-abstraction-fill);
   border-color: var(--caped-abstraction);
   color: var(--caped-abstraction-text);
 }
 
-.caped-note-expression {
+.caped-dimension-tooltip-expression {
   background: var(--caped-expression-fill);
   border-color: var(--caped-expression);
   color: var(--caped-expression-text);
-}
-
-.caped-note {
-  border: 1px solid;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  margin-top: 0.75rem;
-  padding: 0.5rem 0.75rem;
 }
 
 /* Example embeds */

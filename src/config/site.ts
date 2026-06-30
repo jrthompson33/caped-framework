@@ -37,3 +37,7 @@ export const capedDimensions: {
     description: 'Skills for preparing, understanding, and shaping source data.',
   },
 ];
+
+export const capedDimensionLabels = Object.fromEntries(
+  capedDimensions.map((dim) => [dim.id, dim.label])
+) as Record<CapedDimension, string>;

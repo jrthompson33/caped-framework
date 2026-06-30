@@ -14,8 +14,6 @@ const annotationSchema = z.object({
   text: z.string(),
   /** Which CAPED dimension this annotation relates to */
   dimension: capedDimension,
-  /** Tooltip or sidebar note explaining the connection */
-  note: z.string(),
 });
 
 const subsectionSchema = z.object({

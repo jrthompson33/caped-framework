@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import type { Annotation, CapedDimension } from '@/content/config';
+import { capedDimensionLabels } from '@/config/site';
 
 interface Props {
   text: string;
@@ -10,11 +11,6 @@ interface Segment {
   kind: 'text' | 'annotation';
   value: string;
   annotation?: Annotation;
-}
-
-interface ActiveAnnotation {
-  note: string;
-  dimension: CapedDimension;
 }
 
 function buildSegments(text: string, annotations: Annotation[]): Segment[] {
@@ -49,7 +45,6 @@ function buildSegments(text: string, annotations: Annotation[]): Segment[] {
 
 export default function AnnotatedText({ text, annotations }: Props) {
   const segments = useMemo(() => buildSegments(text, annotations), [text, annotations]);
-  const [active, setActive] = useState<ActiveAnnotation | null>(null);
 
   return (
     <div className="annotated-text">
@@ -60,31 +55,23 @@ export default function AnnotatedText({ text, annotations }: Props) {
           }
 
           const dimension = segment.annotation?.dimension ?? 'input';
-          const note = segment.annotation?.note ?? '';
+          const label = capedDimensionLabels[dimension as CapedDimension];
 
           return (
             <span
               key={index}
-              className={`caped-${dimension}`}
-              role="button"
+              className={`caped-${dimension} caped-annotated`}
               tabIndex={0}
-              aria-describedby={note ? `note-${index}` : undefined}
-              onMouseEnter={() => setActive({ note, dimension })}
-              onMouseLeave={() => setActive(null)}
-              onFocus={() => setActive({ note, dimension })}
-              onBlur={() => setActive(null)}
+              aria-label={`${segment.value} (${label})`}
             >
               {segment.value}
+              <span className={`caped-dimension-tooltip caped-dimension-tooltip-${dimension}`}>
+                {label}
+              </span>
             </span>
           );
         })}
       </p>
-
-      {active && (
-        <aside className={`caped-note caped-note-${active.dimension}`} aria-live="polite">
-          {active.note}
-        </aside>
-      )}
     </div>
   );
 }

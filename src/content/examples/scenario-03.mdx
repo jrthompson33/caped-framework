@@ -11,13 +11,10 @@ sections:
     annotations:
       - text: "simple prompt"
         dimension: paradigm
-        note: "Natural-language paradigm—articulating intent without specifying chart structure."
       - text: "grouped bar chart"
         dimension: output
-        note: "Output skill to recognize that a grouped bar chart is inappropriate for disparate-scale metrics."
       - text: "examines the generated code"
         dimension: expression
-        note: "Expression skill shifts to code reading and verification rather than writing from scratch."
   - title: "Targeted follow-up produces a parallel coordinates plot"
     text: "Jesse now provides a specific follow-up prompt to avoid ambiguous interpretation from the AI assistant: “Change this to a parallel coordinates plot. Give each variable its own vertical axis, normalize the scales, and color the lines based on the job offer.” The AI assistant handles the complex data normalization and plotting logic, and successfully generates a readable parallel coordinates plot. Jesse can now compare the jobs across all dimensions."
     embedType: image
@@ -25,13 +22,10 @@ sections:
     annotations:
       - text: "parallel coordinates plot"
         dimension: output
-        note: "Output skill selects an appropriate multivariate chart form for the analytical task."
       - text: "specific follow-up prompt"
         dimension: paradigm
-        note: "Refined prompting paradigm—steering the AI with precise structural vocabulary."
       - text: "normalize the scales"
         dimension: abstraction
-        note: "Abstraction skill specifies how data dimensions should be mapped to independent axes."
 remarks: "With LLMs, Jesse can generate complex visualizations like a parallel coordinates plot. Thus, it is tempting to assume that the AI assistant “removes” the chart authoring skill requirement en- tirely. However, Jesse’s success does not come from the AI agent; it relies on a combination of programming and visualization composi- tion knowledge. While the AI accelerated the generation of complex code, Jesse’s programming expertise was essential to first inspect and confirm code was syntactically correct but inappropriate in terms of chart design. Jesse then needed the conceptual knowledge to diagnose why the grouped bar chart failed and the precise visualization vocab- ulary to instruct the AI on the appropriate fix. Automated tools do not eliminate traditional skills; rather, they transform them. Chart authoring skills must evolve to encompass code verification, targeted prompting, structural critique, and the ability to steer AI agents away from conceptually flawed defaults and toward appropriate solutions."
 draft: false
 ---

@@ -39,7 +39,6 @@ sections:
     annotations:
       - text: "exact phrase"
         dimension: input
-        note: "Why this maps to the Input dimension."
   - title: "Second chart"
     text: "Describe the next part of the scenario."
     embedType: live
@@ -53,7 +52,7 @@ draft: false
 
 ## CAPED annotations
 
-The `AnnotatedText` React component highlights phrases in each example's `description` field. Annotation `text` values must match substrings exactly. Hover or focus reveals the dimension-specific note.
+The `AnnotatedText` React component highlights phrases in each subsection's `text` field. Annotation `text` values must match substrings exactly. Hover or focus a highlight to see which CAPED dimension it maps to.
 
 ## Deploy to GitHub Pages
 
