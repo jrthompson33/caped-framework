@@ -30,12 +30,12 @@ Create `src/content/examples/06-my-example.mdx`:
 title: "My Example"
 order: 6
 summary: "One-line summary"
-intro: "Optional context before the subsections."
 sections:
   - title: "First chart"
     text: "Describe this part of the scenario. Include exact phrases that match annotations below."
     embedType: image   # image | iframe | live
     embedSrc: "/images/my-screenshot.png"
+    embedWidth: 75     # optional, 1–100 (default 100)
     annotations:
       - text: "exact phrase"
         dimension: input
@@ -47,7 +47,6 @@ sections:
       // Optional code for live embed placeholder
     annotations: []
 remarks: "Optional closing notes on how this example relates to CAPED."
-capedFocus: [input, output]
 draft: false
 ---
 ```

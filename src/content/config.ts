@@ -28,6 +28,10 @@ const subsectionSchema = z.object({
   embedType: z.enum(['live', 'iframe', 'image']),
   /** URL for iframe or image embeds */
   embedSrc: z.string().optional(),
+  /** Caption shown below image embeds */
+  embedCaption: z.string().optional(),
+  /** Width of the embed as a percentage of the content area (1–100) */
+  embedWidth: z.number().min(1).max(100).default(100),
   /** Optional live code snippet shown in a sandbox */
   embedCode: z.string().optional(),
 });
@@ -37,14 +41,10 @@ const exampleSchema = z.object({
   /** Display order on the page (lower = earlier) */
   order: z.number(),
   summary: z.string(),
-  /** Optional intro shown before subsections */
-  intro: z.string().optional(),
   /** Narrative subsections, each with text and one embed */
   sections: z.array(subsectionSchema).min(1),
   /** Author or reviewer remarks about the example and its CAPED analysis */
   remarks: z.string().optional(),
-  /** Short labels for which CAPED dimensions this example emphasizes */
-  capedFocus: z.array(capedDimension).default([]),
   draft: z.boolean().default(false),
 });
 

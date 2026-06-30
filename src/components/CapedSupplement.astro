@@ -1,5 +1,4 @@
 ---
-import { capedDimensions } from '@/config/site';
 import { getCollection } from 'astro:content';
 import ExampleSection from '@/components/ExampleSection.astro';
 import FrameworkLegend from '@/components/FrameworkLegend.astro';
@@ -15,7 +14,6 @@ if (!paper) {
 }
 
 const { title, subtitle, venue, year, authors, abstract } = paper.data;
-const allCapedDimensions = capedDimensions.map((dim) => dim.id);
 ---
 
 <div class="caped-supplement">
@@ -29,7 +27,7 @@ const allCapedDimensions = capedDimensions.map((dim) => dim.id);
     <div class="example-body">
       <h2>About CAPED</h2>
       <p>{abstract}</p>
-      <FrameworkLegend layout="footer" activeDimensions={allCapedDimensions} />
+      <FrameworkLegend showDescriptions />
     </div>
   </section>
 

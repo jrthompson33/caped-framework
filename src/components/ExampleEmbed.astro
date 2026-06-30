@@ -3,11 +3,14 @@ interface Props {
   embedType: 'live' | 'iframe' | 'image';
   embedSrc?: string;
   embedCode?: string;
+  embedCaption?: string;
+  embedWidth?: number;
   title: string;
 }
 
-const { embedType, embedSrc, embedCode, title } = Astro.props;
+const { embedType, embedSrc, embedCode, embedCaption, embedWidth = 100, title } = Astro.props;
 const liveData = [12, 28, 19, 34];
+const embedStyle = `width: ${embedWidth}%; max-width: 100%;`;
 
 function withBase(path: string) {
   if (path.startsWith('http://') || path.startsWith('https://')) {
@@ -23,11 +26,14 @@ const imageSrc = embedSrc ? withBase(embedSrc) : undefined;
 
 {
   embedType === 'image' && imageSrc ? (
-    <figure class="embed embed-image">
-      <img src={imageSrc} alt={`Visualization example: ${title}`} />
+    <figure class="embed embed-image" style={embedStyle}>
+      <div class="embed-image-frame">
+        <img src={imageSrc} alt={`Visualization example: ${title}`} />
+      </div>
+      {embedCaption && <figcaption>{embedCaption}</figcaption>}
     </figure>
   ) : embedType === 'iframe' && embedSrc ? (
-    <div class="embed embed-iframe">
+    <div class="embed embed-iframe" style={embedStyle}>
       <iframe
         src={embedSrc}
         title={`Embedded visualization: ${title}`}
@@ -36,7 +42,7 @@ const imageSrc = embedSrc ? withBase(embedSrc) : undefined;
       />
     </div>
   ) : embedType === 'live' ? (
-    <div class="embed embed-live">
+    <div class="embed embed-live" style={embedStyle}>
       <p class="embed-label">Live embed placeholder — replace with D3, Observable, or Sandpack</p>
       <svg width="240" height="80" aria-label={`Sample chart for ${title}`}>
         {
@@ -54,7 +60,7 @@ const imageSrc = embedSrc ? withBase(embedSrc) : undefined;
       </svg>
     </div>
   ) : (
-    <div class="embed embed-empty">
+    <div class="embed embed-empty" style={embedStyle}>
       No embed configured yet.
       {embedCode && <pre class="embed-code">{embedCode.trim()}</pre>}
     </div>

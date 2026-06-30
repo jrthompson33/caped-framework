@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { example } = Astro.props;
-const { title, summary, intro, sections, capedFocus, remarks } = example.data;
+const { title, summary, sections, remarks } = example.data;
 ---
 
 <article id={example.slug} class="example-card">
@@ -21,8 +21,6 @@ const { title, summary, intro, sections, capedFocus, remarks } = example.data;
   </header>
 
   <div class="example-body">
-    {intro && <p class="example-intro">{intro}</p>}
-
     <div class="example-subsections">
       {
         sections.map((section, index) => (
@@ -40,6 +38,6 @@ const { title, summary, intro, sections, capedFocus, remarks } = example.data;
       )
     }
 
-    <FrameworkLegend activeDimensions={capedFocus} layout="footer" />
+    <FrameworkLegend />
   </div>
 </article>

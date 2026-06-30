@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-label="Placeholder custom glyph chart">
-  <rect width="800" height="420" fill="#f4f6fb"/>
-  <text x="40" y="48" font-family="system-ui,sans-serif" font-size="20" fill="#5c6370">Example 5  Custom Glyph Chart (placeholder)</text>
-  <circle cx="180" cy="220" r="36" fill="#e8ecfb" stroke="#4f6bed" stroke-width="3"/>
-  <rect x="300" y="180" width="72" height="72" fill="#e8ecfb" stroke="#4f6bed" stroke-width="3" transform="rotate(12 336 216)"/>
-  <polygon points="500,180 540,260 460,260" fill="#e8ecfb" stroke="#4f6bed" stroke-width="3"/>
-  <circle cx="620" cy="220" r="28" fill="#4f6bed" opacity="0.5"/>
-  <circle cx="650" cy="200" r="18" fill="#4f6bed"/>
-</svg>
