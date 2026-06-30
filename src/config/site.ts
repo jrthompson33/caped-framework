@@ -10,31 +10,31 @@ export const capedDimensions: {
     id: 'output',
     label: 'Output Chart',
     short: 'C',
-    description: 'Skills for selecting chart types and matching form to analytical tasks.',
+    description: 'Target chart design to describe and understand.',
   },
   {
     id: 'abstraction',
     label: 'Abstraction',
     short: 'A',
-    description: 'Skills for mapping data concepts to visual variables and structures.',
+    description: 'Conceptual model of what a chart is.',
   },
   {
     id: 'paradigm',
     label: 'Paradigm',
     short: 'P',
-    description: 'Skills tied to the authoring interaction model (code, GUI, prompts, etc.).',
+    description: 'High-level approach to authoring a chart.',
   },
   {
     id: 'expression',
     label: 'Expression',
     short: 'E',
-    description: 'Skills for specifying low-level visual details and custom marks.',
+    description: 'Medium-level for articulating chart design.',
   },
   {
     id: 'input',
     label: 'Input Data',
     short: 'D',
-    description: 'Skills for preparing, understanding, and shaping source data.',
+    description: 'Skills for preparing the data for the chart.',
   },
 ];
 

@@ -4,35 +4,47 @@ order: 1
 summary: "An analyst creates a waterfall chart and a dumbbell chart in Excel—two tasks that demand different authoring approaches despite using the same tool."
 sections:
   - title: "Waterfall chart via built-in template"
-    text: "Alex is an analyst who is asked to create a waterfall and dumbbell chart for a quarterly financial performance report. Alex decides to use Excel, a tool they are familiar with, to create these charts. A waterfall chart will illustrate changes in the company’s net income per quarter. Alex prepares the data to conform to Excel’s waterfall chart template: grouping by quarter and computing the difference from the previous quarter. With the data properly formatted, Alex produces the chart by selecting “Waterfall” chart from the “Insert” tab in Excel."
+    text: "Alex is an analyst who is asked to create a waterfall and dumbbell chart for a quarterly financial performance report. Alex decides to use Excel, a tool they are familiar with, to create these charts. A waterfall chart will illustrate changes in the company's net income per quarter. Alex prepares the data to conform to Excel's waterfall chart template: grouping by quarter and computing the difference from the previous quarter. With the data properly formatted, Alex produces the chart by selecting \"Waterfall\" chart from the \"Insert\" tab in Excel."
     embedType: image
-    embedSrc: "/images/Waterfall.png"
+    embedSrc: "/images/scenario-01-waterfall-chart-01.png"
     embedWidth: 75
-    embedCaption: "Waterfall chart of quarterly net income created in Excel using the built-in template."
+    embedCaption: "Waterfall chart of quarterly net income created in Excel using the built-in \"Waterfall\" template."
     annotations:
-      - text: "waterfall chart template"
+      - text: "waterfall and dumbbell chart"
         dimension: output
-      - text: "prepared the data"
+      - text: "waterfall chart"
+        dimension: output
+      - text: "Excel's waterfall chart template"
+        dimension: abstraction
+      - text: "prepares the data"
         dimension: input
-      - text: "Insert tab"
-        dimension: paradigm
+      - text: "by selecting \"Waterfall\" chart from the \"Insert\" tab"
+        dimension: expression
   - title: "Dumbbell chart composed from scratch"
-    text: "A dumbbell chart will show the company’s actual performance against its targets. Excel lacks a dumbbell chart template, so Alex searches online and decides to follow a tutorial to create a dumbbell chart with work-arounds. Following the tutorial, Alex organizes the data to “Insert” a “Scatter Plot”, then as a work-around Alex inserts error bars to connect the target and actual points. Finally, Alex must format the chart to remove unwanted visuals from the error bars to achieve a dumbbell chart."
+    text: "A dumbbell chart will show the company's actual performance against its targets. Excel lacks a dumbbell chart template, so Alex searches online and decides to follow a tutorial to create a dumbbell chart with work-arounds. Following the tutorial, Alex organizes the data to \"Insert\" a \"Scatter Plot\", then as a work-around Alex inserts error bars to connect the target and actual points. Finally, Alex must format the chart to remove unwanted visuals from the error bars to achieve a dumbbell chart."
     embedType: image
-    embedSrc: "/images/dumbbell_error_bars.png"
+    embedSrc: "/images/scenario-01-dumbbell-chart-01.png"
+    embedWidth: 60
     embedCaption: "A scatterplot chart with error bars as an intermediate step towards a dumbbell chart."
     annotations:
       - text: "dumbbell chart"
         dimension: output
-      - text: "scatter plot"
-        dimension: abstraction
-      - text: "error bars"
+      - text: "work-arounds"
+        dimension: paradigm
+      - text: "Alex organizes the data"
+        dimension: input
+      - text: "\"Insert\" a \"Scatter Plot\""
         dimension: expression
+      - text: "as a work-around"
+        dimension: paradigm
+      - text: "achieve a dumbbell chart"
+        dimension: output
   - title: "Dumbbell chart final"
     text: ""
     embedType: image
-    embedSrc: "/images/dumbbell_final.png"
+    embedWidth: 60
+    embedSrc: "/images/scenario-01-dumbbell-chart-02.png"
     embedCaption: "Final version of dumbbell chart created from scratch in Excel."
-remarks: "Given that Alex can fluently use Excel templates to create the desired waterfall chart, a non-trivial visualization, one might consider Alex is skilled in chart authoring with Excel. However, Alex’s struggle with dumbbell chart authoring contradicts this assessment. In fact, such struggle does not mean they are unskillful with Excel either, since the two chart creation processes employ completely different authoring approaches: the first involves instantiation of built-in templates from the tool, while the latter requires “hacking” to appropriate other plots to mimic the dumbbell chart. This scenario highlights that chart authoring skills cannot be characterized solely at the level of the tool. Even with the same tool, different tasks may require different authoring approaches and, consequently, different user skills."
+remarks: "Given that Alex can fluently use Excel templates to create the desired waterfall chart, a non-trivial visualization, one might consider Alex is skilled in chart authoring with Excel. However, Alex's struggle with dumbbell chart authoring contradicts this assessment. In fact, such struggle does not mean they are unskillful with Excel either, since the two chart creation processes employ completely different authoring approaches: the first involves instantiation of built-in templates from the tool, while the latter requires \"hacking\" to appropriate other plots to mimic the dumbbell chart. This scenario highlights that chart authoring skills cannot be characterized solely at the level of the tool. Even with the same tool, different tasks may require different authoring approaches and, consequently, different user skills."
 draft: false
 ---

@@ -1,0 +1,57 @@
+---
+title: "The Same Chart Using the Same Tool"
+order: 4
+summary: "Authors create the same chart in ggplot2 and Charticulator—but different input data shapes and authoring paradigms demand different skills even within one tool."
+sections:
+  - title: "Reshaping data for a faceted line chart"
+    text: "The faceted line chart shows stock prices (y-axis) during the same time periods (x-axis) for three companies: IBM, Microsoft (MSFT), and Amazon (AMZN). ggplot2 incorporates methods to manipulate input data and output charts, supporting alternative design approaches to authoring the same chart with two different input data schemas. Given data in the long format with \"date\", \"company\", and \"price\" columns, authors can employ the facet_grid operator to create faceted sub line charts with the column \"company\"; if the input data is in the wide format with \"date\", \"MSFT\", \"AMZN\", and \"IBM\" columns, authors can apply different configurations to the same base chart using lappy operation to produce a repeated line chart for each company. "
+    embedType: image
+    embedSrc: "/images/scenario-04-faceted-line-chart-01.png"
+    embedCaption: "Faceted line chart of stock prices created in ggplot2."
+    annotations:
+      - text: "faceted line chart"
+        dimension: output
+      - text: "two different input data schemas"
+        dimension: input
+      - text: "long format"
+        dimension: input
+      - text: "employ the facet_grid operator"
+        dimension: input
+      - text: "wide format"
+        dimension: input
+      - text: "alternative design approaches"
+        dimension: paradigm
+      - text: "faceted sub line charts"
+        dimension: output
+      - text: "repeated line chart"
+        dimension: output
+      - text: "apply different configurations to the same base chart using lappy operation"
+        dimension: expression
+  - title: "Composing vs instantiating a ribbon chart in Charticulator"
+    text: " Charticulator provides two ways to create a ribbon chart: by constructing from scratch (paradigm: compose), or by using a ribbon chart template (paradigm: instantiate). In this example, a ribbon chart shows mobile operating system market share from 2009 to 2016. The input data includes \"operating system\", \"year\", and \"share\" columns. For an author to compose this ribbon chart, they start by encoding a rectangle glyph's height by \"share\" and the x-axis of the chart by \"year\". Then they encode the \"operating sytem\" to the color and apply a Stack Y to the glyphs and order the stack by \"share.\" Finally to create a ribbon chart, the author applies a \"Band\" link, connected by the \"platform\" data attribute. The input data needs to be tool-compatible with Charticulator to compose the ribbon chart from scratch. However, in the other use case – to instantiate the chart from a template – the input data needs to be exactly compatible with the given template. Consequently, the abstractions and expressions involved are different for creating the same chart with the same tool."
+    embedType: image
+    embedSrc: "/images/scenario-04-ribbon-chart-01.png"
+    embedCaption: "Ribbon chart of mobile operating system market share in Charticulator."
+    annotations:
+      - text: "ribbon chart"
+        dimension: output
+      - text: "constructing from scratch"
+        dimension: paradigm
+      - text: "ribbon chart template"
+        dimension: paradigm
+      - text: "a ribbon chart shows"
+        dimension: output
+      - text: "encoding"
+        dimension: abstraction
+      - text: "encode"
+        dimension: abstraction
+      - text: "tool-compatible"
+        dimension: input
+      - text: "create a ribbon chart,"
+        dimension: output
+      - text: "compose the ribbon chart from scratch"
+        dimension: paradigm
+      - text: "instantiate the chart from a template"
+        dimension: paradigm
+draft: false
+---

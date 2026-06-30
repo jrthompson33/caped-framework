@@ -34,7 +34,7 @@ sections:
   - title: "First chart"
     text: "Describe this part of the scenario. Include exact phrases that match annotations below."
     embedType: image   # image | iframe | live
-    embedSrc: "/images/my-screenshot.png"
+    embedSrc: "/images/scenario-06-line-chart-01.png"
     embedWidth: 75     # optional, 1–100 (default 100)
     annotations:
       - text: "exact phrase"

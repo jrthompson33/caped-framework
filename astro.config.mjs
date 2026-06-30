@@ -29,16 +29,20 @@ export default defineConfig({
           label: 'Scenarios',
           items: [
             {
-              label: 'Two Different Charts with the Same Tool',
+              label: '1. Two Different Charts with the Same Tool',
               link: '#scenario-01',
             },
             {
-              label: 'Skills Transfer between Tools',
+              label: '2. Skills Transfer between Tools',
               link: '#scenario-02',
             },
             {
-              label: 'Different Authoring Skills to Work with AI',
+              label: '3. Different Authoring Skills to Work with AI',
               link: '#scenario-03',
+            },
+            {
+              label: '4. The Same Chart Using the Same Tool',
+              link: '#scenario-04',
             },
           ],
         },

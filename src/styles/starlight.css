@@ -2,6 +2,15 @@
 
 :root {
   --sl-content-width: 56rem;
+  --sl-sidebar-width: 24rem;
+
+  /* Softer, less saturated theme blue */
+  --sl-color-accent-low: hsl(215, 28%, 22%);
+  --sl-color-accent: hsl(215, 38%, 58%);
+  --sl-color-accent-high: hsl(215, 32%, 76%);
+  --sl-color-blue-low: hsl(215, 28%, 22%);
+  --sl-color-blue: hsl(215, 38%, 58%);
+  --sl-color-blue-high: hsl(215, 32%, 76%);
 
   --color-border: var(--sl-color-gray-5);
   --color-muted: var(--sl-color-gray-3);
@@ -11,10 +20,10 @@
   --color-bg: var(--sl-color-bg);
   --color-text: var(--sl-color-text);
 
-  /* Input Data — sky blue */
-  --caped-input-fill: #b5d4ef;
-  --caped-input: #3a6f9e;
-  --caped-input-text: #1a3f5f;
+  /* Input Data — muted blue */
+  --caped-input-fill: #cdd8e4;
+  --caped-input: #6b8fa8;
+  --caped-input-text: #2d4a5c;
 
   /* Output Chart — lemon yellow */
   --caped-output-fill: #f2e4a8;
@@ -38,9 +47,16 @@
 }
 
 :root[data-theme='dark'] {
-  --caped-input-fill: #1e3a52;
-  --caped-input: #7eb8e8;
-  --caped-input-text: #d4e8f8;
+  --sl-color-accent-low: hsl(215, 28%, 22%);
+  --sl-color-accent: hsl(215, 38%, 58%);
+  --sl-color-accent-high: hsl(215, 32%, 76%);
+  --sl-color-blue-low: hsl(215, 28%, 22%);
+  --sl-color-blue: hsl(215, 38%, 58%);
+  --sl-color-blue-high: hsl(215, 32%, 76%);
+
+  --caped-input-fill: #2a3d4d;
+  --caped-input: #8faec4;
+  --caped-input-text: #d0dde8;
 
   --caped-output-fill: #3d3518;
   --caped-output: #e8d078;
@@ -57,6 +73,15 @@
   --caped-expression-fill: #1e3a1e;
   --caped-expression: #7ec87e;
   --caped-expression-text: #d4f0d4;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-high: hsl(215, 32%, 32%);
+  --sl-color-accent: hsl(215, 36%, 46%);
+  --sl-color-accent-low: hsl(215, 28%, 92%);
+  --sl-color-blue-high: hsl(215, 32%, 32%);
+  --sl-color-blue: hsl(215, 36%, 46%);
+  --sl-color-blue-low: hsl(215, 28%, 92%);
 }
 
 .caped-supplement header {
@@ -139,6 +164,15 @@
 
 .caped-supplement .toc-card li + li {
   margin-top: 0.5rem;
+}
+
+.caped-supplement .toc-card a {
+  color: var(--sl-color-accent);
+  text-decoration: none;
+}
+
+.caped-supplement .toc-card a:hover {
+  color: var(--sl-color-accent-high);
 }
 
 .caped-supplement .section-label {
@@ -312,6 +346,12 @@
   background: var(--sl-color-bg-nav);
 }
 
+@media (max-width: 49.999rem) {
+  .embed.embed-image {
+    width: 100% !important;
+  }
+}
+
 .embed-image-frame {
   background: #fff;
 }
@@ -320,6 +360,7 @@
   display: block;
   height: auto;
   width: 100%;
+  padding: 1rem;
 }
 
 .embed-image figcaption {
@@ -329,6 +370,7 @@
   line-height: 1.5;
   padding: 0.75rem 1rem;
   text-align: center;
+  margin: 0;
 }
 
 .embed-iframe iframe {

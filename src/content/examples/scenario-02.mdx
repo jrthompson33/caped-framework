@@ -4,29 +4,29 @@ order: 2
 summary: "A data engineer adapts visualization skills from Altair and D3 to Power BI, relying on programming for data transformation between chart iterations."
 sections:
   - title: "Multi-series line chart in Power BI"
-    text: "Kori is a data engineer at a public health organization. Kori is asked to create a report that explains the leading causes of death for citizens from 1968 until the present year. The dataset includes mortality rates based on the cause of death (e.g., Cancer, Heart Disease, AIDS) for each year, age group, state residence, and gender. Kori has a programming background and extensive experience creating visualizations using libraries, however, Kori’s organization exclusively publishes with Microsoft Power BI.Kori decides to visualize the change in mortality rates across age groups. They create a multi-series line chart of “Age Group” displaying “Year” on the x-axis and “Mortality Rate” on the y-axis. Noticing a steady yet gradual decline in all age groups, Kori wonders if the orders of magnitude of the line chart are overshadowed by the older age groups. Kori hypothesizes that a rate of change would allow better comparison."
+    text: "Kori is a data engineer at a public health organization. Kori is asked to create a report that explains the leading causes of death for citizens from 1968 until the present year. The dataset includes mortality rates based on the cause of death (e.g., Cancer, Heart Disease, AIDS) for each year, age group, state residence, and gender. Kori has a programming background and extensive experience creating visualizations using libraries, however, Kori's organization exclusively publishes with Microsoft Power BI. Kori decides to visualize the change in mortality rates across age groups. They create a multi-series line chart of \"Age Group\" displaying \"Year\" on the x-axis and \"Mortality Rate\" on the y-axis. Noticing a steady yet gradual decline in all age groups, Kori wonders if the orders of magnitude of the line chart are overshadowed by the older age groups. Kori hypothesizes that a rate of change would allow better comparison."
     embedType: image
-    embedSrc: "/images/LineChart1.png"
+    embedSrc: "/images/scenario-02-line-chart-01.png"
     embedCaption: "Multi-series line chart of mortality rates by age group in Power BI."
     annotations:
       - text: "multi-series line chart"
         dimension: output
-      - text: "Age Group"
-        dimension: abstraction
-      - text: "Power BI"
-        dimension: paradigm
+      - text: "\"Year\" on the x-axis and \"Mortality Rate\" on the y-axis"
+        dimension: expression
   - title: "Rate-of-change chart after data transformation"
-    text: "For this chart, Kori needs a new column of “Mortality rate change (since 1968).” They opt to write Python script to transform the data. Using the Pandas data library, Kori loads the dataset, computes the new column, and exports the resulting dataset. Loading the dataset (with all the required fields) back into Power BI, Kori uses drag-and-drop to create a line chart that shows on the whole, all age groups exhibit similar trends of decrease, except for a noticeable peak for the “25 to 44” age group that coincides with the AIDS epidemic."
+    text: "For this chart, Kori needs a new column of \"Mortality rate change (since 1968).\" They opt to write Python script to transform the data. Using the Pandas data library, Kori loads the dataset, computes the new column, and exports the resulting dataset. Loading the dataset (with all the required fields) back into Power BI, Kori uses drag-and-drop to create a line chart that shows on the whole, all age groups exhibit similar trends of decrease, except for a noticeable peak for the \"25 to 44\" age group that coincides with the AIDS epidemic."
     embedType: image
-    embedSrc: "/images/LineChart2.png"
+    embedSrc: "/images/scenario-02-line-chart-02.png"
     embedCaption: "Line chart of mortality rate change since 1968 after transforming the data with Pandas."
     annotations:
-      - text: "Python script"
-        dimension: paradigm
-      - text: "Mortality rate change"
+      - text: "a new column of \"Mortality rate change (since 1968).\""
         dimension: input
-      - text: "iterating between Pandas and Power BI"
+      - text: "Python script to transform the data"
+        dimension: input
+      - text: "drag-and-drop"
         dimension: expression
-remarks: "Despite being relatively new to Power BI, Kori quickly adapts to it based on experience from declarative programming libraries (e.g., Altair). Visualization authoring skills are transferable, beyond the authoring medium (in this case Kori was more familiar with textual code rather than a shelf-construction UI), as Altair and Power BI share similar authoring concepts of mapping data columns to visual channels. However, transfer of skills is not bi-directional as someone with only Power BI experience would need to learn additional programming skills to use Altair. Thus, when characterizing skills, we need to consider not only visualization concepts but also the medium to express these concepts. Secondly, this scenario highlights the importance of data transformation in the visualization authoring process While this step is often overlooked , it becomes essential when authors need to test hypotheses and prepare the desired charts. In Kori’s case, they relied on a familiar programming paradigm to transform data. However, they could have used Power Query (a companion tool of Power BI)."
+      - text: "a line chart"
+        dimension: output
+remarks: "Despite being relatively new to Power BI, Kori quickly adapts to it based on experience from declarative programming libraries (e.g., Altair). Visualization authoring skills are transferable, beyond the authoring medium (in this case Kori was more familiar with textual code rather than a shelf-construction UI), as Altair and Power BI share similar authoring concepts of mapping data columns to visual channels. However, transfer of skills is not bi-directional as someone with only Power BI experience would need to learn additional programming skills to use Altair. Thus, when characterizing skills, we need to consider not only visualization concepts but also the medium to express these concepts. Secondly, this scenario highlights the importance of data transformation in the visualization authoring process While this step is often overlooked , it becomes essential when authors need to test hypotheses and prepare the desired charts. In Kori's case, they relied on a familiar programming paradigm to transform data. However, they could have used Power Query (a companion tool of Power BI)."
 draft: false
 ---
